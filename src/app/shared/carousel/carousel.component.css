@@ -1,0 +1,9 @@
+.img {
+  border-radius: 12px;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+:host::ng-deep .p-carousel-indicators.p-reset {
+  display: none;
+}

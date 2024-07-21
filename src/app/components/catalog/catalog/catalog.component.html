@@ -1,0 +1,78 @@
+<div class="wrapper">
+  <div class="row gap-3">
+    <div class="dropdown-div" [ngClass]="{ 'show-dropdown': toggle }">
+      <div *ngFor="let dropdown of dropDownData">
+        <p-dropdown
+          [style]="{ width: '250px' }"
+          [options]="dropdown.dropdown"
+          [(ngModel)]="selectedDropdown"
+          optionLabel="name"
+          [placeholder]="dropdown.title"
+        ></p-dropdown>
+      </div>
+    </div>
+    <div class="content-div column">
+      <div class="carousel">
+        <hr />
+
+        <app-carousel
+          [data]="carouselData2"
+          [numVisible]="6"
+          [numScroll]="1"
+          [autoplayInterval]="0"
+          imageWidth="150px"
+          imageHeight="150px"
+          borderRadius="50%"
+        ></app-carousel>
+      </div>
+
+      <div class="product-div">
+        <hr />
+        <div class="row space-between visible-btn">
+          <h2>პროდუქტი</h2>
+          <p style="margin-right: 50%">სულ {{ products.length }}</p>
+        </div>
+        <div class="cat-btn">
+          <p-button
+            class="hidden-btn"
+            label="კატეგორიები"
+            severity="secondary"
+            (click)="openDropdown()"
+          />
+        </div>
+        <hr />
+        <div class="products row gap-2 wrap product-item">
+          <p-card
+            class="card"
+            *ngFor="let prod of products"
+            header="{{ prod.productName }}"
+            subheader="{{ prod.productSpecies }}"
+            (click)="onDetails(prod)"
+          >
+            <ng-template pTemplate="header">
+              <img loading="lazy" alt="Card" src="{{ prod.path }}" />
+            </ng-template>
+            <div class="row mb-15">
+              <div class="row price mr-5" *ngIf="prod.salesPrice">
+                <p style="color: red">{{ prod.salesPrice }}</p>
+                <span style="color: red">₾</span>
+              </div>
+              <div class="row price" [class.line-through]="prod.salesPrice">
+                <p>{{ prod.price }}</p>
+                <span>₾</span>
+              </div>
+            </div>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PAGINATION TEMPLATE -->
+  <!-- <p-paginator
+    (onPageChange)="onPageChange($event)"
+    [first]="first"
+    [rows]="rows"
+    [totalRecords]="products.length"
+    [rowsPerPageOptions]="[10]"
+  /> -->
+</div>

@@ -1,0 +1,25 @@
+<p-carousel
+  [value]="data"
+  [numVisible]="numVisible"
+  [numScroll]="numScroll"
+  [circular]="true"
+  [autoplayInterval]="autoplayInterval"
+  [responsiveOptions]="responsiveOptions"
+>
+  <ng-template let-product pTemplate="item">
+    <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+      <div class="mb-3 flex justify-center">
+        <img
+          [src]="product.path"
+          [alt]="product.img"
+          [ngStyle]="{
+            'width':imageWidth,
+            'height':imageHeight,
+            'border-radius':borderRadius,
+          }"
+          class="w-6 shadow-2 img"
+        />
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>

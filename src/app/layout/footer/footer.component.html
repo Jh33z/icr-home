@@ -1,0 +1,56 @@
+<footer class="wrapper column full-center">
+  <div class="row footer-header justify-around">
+    <div class="row content self-center">
+      <img
+        class="img"
+        width="100px"
+        height="100px"
+        src="https://icrhome.ge/assets/icons/AboveFooterNewsletter_Image.png"
+        alt=""
+      />
+      <div style="align-self: center">
+        <h4>გამოიწერე ჩვენი სიახლეები</h4>
+        <p>მიიღე ინფორმაცია ფასდაკლებების შესახებ ელ-ფოსტაზე!</p>
+      </div>
+    </div>
+    <div style="align-self: center">
+      <input class="input" type="text" placeholder="ელ-ფოსტა" />
+    </div>
+  </div>
+  <div class="row footer-data mt-15">
+    <div class="column" *ngFor="let fdata of footerData">
+      <h3>{{ fdata.title }}</h3>
+      <div class="column">
+        <div *ngFor="let ftext of fdata.data">
+          <p style="margin-top: 5px">{{ ftext.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <hr />
+  <div class="row mt-15 payment-div">
+    <div class="row gap-2 p-text">
+      <img
+        src="
+        https://icrhome.ge/assets/icons/LOCKER.svg
+      "
+        alt=""
+      />
+      <p style="width: 75%">
+        ვებ-გვერდიდან პროდუქტების შესაძენად შეგიძლიათ გამოიყენოთ საქართველოში
+        მოქმედი ბანკების მიერ გაცემული Visa და Mastercard ტიპის ბარათები. ასევე
+        თქვენ შეგიძლიათ ისარეგებლოთ „თიბისი“ ბანკის განვადებით.
+      </p>
+    </div>
+    <div class="payment row gap-1">
+      <img src="https://icrhome.ge/assets/icons/pay/VISA.svg" alt="" />
+      <img src="https://icrhome.ge/assets/icons/pay/mastercard.svg" alt="" />
+      <img
+        src="https://icrhome.ge/assets/icons/pay/tbc-installment-logo.svg"
+        alt=""
+      />
+      <img src="https://icrhome.ge/assets/icons/pay/bog-payment.svg" alt="" />
+    </div>
+  </div>
+</footer>

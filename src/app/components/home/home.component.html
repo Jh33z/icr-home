@@ -1,0 +1,90 @@
+<div class="wrapper">
+  <div class="carousel">
+    <app-carousel
+      [data]="carouselData1"
+      [numVisible]="1"
+      [numScroll]="1"
+      [autoplayInterval]="3000"
+      imageWidth="100%"
+      imageHeight="380px"
+      borderRadius="12px"
+    ></app-carousel>
+  </div>
+  <div class="content-area">
+    <div class="row gap-1 logos">
+      <div class="logo-inner-div" *ngFor="let logo of logoData">
+        <img class="logo-img" [src]="logo.path" alt="" />
+      </div>
+    </div>
+
+    <div class="carousel2">
+      <app-carousel
+        [data]="carouselData2"
+        [numVisible]="5"
+        [numScroll]="1"
+        [autoplayInterval]="0"
+        imageWidth="200px"
+        imageHeight="200px"
+        borderRadius="50%"
+      ></app-carousel>
+    </div>
+    <div class="product1 mb-25" *ngFor="let prod of products1">
+      <app-products [data]="prod.details" [title]="prod.title"></app-products>
+    </div>
+  </div>
+</div>
+
+<!-- COLLECTION -->
+<div>
+  <h3 class="section-title mb-25">კოლექციები</h3>
+  <div class="row gap-3 collection-resp">
+    <div class="image-container1 large-image">
+      <img
+        src="https://icrhome.ge/assets/images/room/d987db7a261911eebc179600004af6a4.jpg"
+        alt=""
+      />
+    </div>
+    <div class="image-container1 large-image">
+      <img
+        src="https://icrhome.ge/assets/images/room/023d0fd6261a11eebc179600004af6a4.jpg"
+        alt=""
+      />
+    </div>
+    <div class="trio-div">
+      <div class="small-image">
+        <img src="../../../assets/carousel2/furniture.png" alt="" />
+        <div class="text-overlay">
+          <p>Special Offer</p>
+        </div>
+      </div>
+      <div class="small-image">
+        <img src="../../../assets/carousel2/furniture.png" alt="" />
+        <div class="text-overlay">
+          <p>კედლის დეკორის კოლექცია</p>
+        </div>
+      </div>
+      <div class="small-image">
+        <img src="../../../assets/carousel2/furniture.png" alt="" />
+        <div class="text-overlay">
+          <p>გორგოლაჭიანი სავარძლების ახალი კოლექცია</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BLOG -->
+<div>
+  <h3 class="blog-title mb-25">ბლოგები</h3>
+  <div class="row gap-3 collection-resp">
+    <div class="blog-img image-container" *ngFor="let blog of blogData">
+      <img src="{{ blog.imgPath }}" alt="" />
+      <div class="mt-15">
+        <h4>{{ blog.title }}</h4>
+        <p style="font-style: italic">{{ blog.text }}</p>
+      </div>
+      <div class="btn-div mt-15">
+        <button class="btn">მეტის ნახვა &rarr;</button>
+      </div>
+    </div>
+  </div>
+</div>

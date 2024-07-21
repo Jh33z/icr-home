@@ -1,0 +1,92 @@
+<div class="wrapper row gap-3" *ngIf="details | async as detail">
+  <div class="img-div">
+    <img width="100%" [src]="detail.path" alt="" />
+  </div>
+  <div class="details-div">
+    <p-card [header]="detail.productSpecies">
+      <div class="column gap-2">
+        <div>
+          <span>{{ detail.price }}</span>
+          <span>₾</span>
+        </div>
+        <div class="row gap-1">
+          <img
+            width="24px"
+            height="24px"
+            src="https://icrhome.ge/assets/icons/pay/bog_payment.svg"
+            alt=""
+          />
+          <span> ნაწილ-ნაწილ გადახდაზე დეტალური ინფორმაცია ნახე აქ </span>
+        </div>
+        <div class="row gap-1">
+          <img
+            width="24px"
+            height="24px"
+            src="https://icrhome.ge/assets/icons/pay/tbcbank.svg"
+            alt=""
+          />
+          <span> ნაწილ-ნაწილ გადახდაზე დეტალური ინფორმაცია ნახე აქ </span>
+        </div>
+        <div class="row space-between">
+          <span>რაოდენობა : </span>
+          <div>
+            <p-inputNumber
+              [(ngModel)]="value"
+              [showButtons]="true"
+              buttonLayout="horizontal"
+              inputId="horizontal"
+              spinnerMode="horizontal"
+              [step]="1"
+              decrementButtonClass="p-button-secondary"
+              incrementButtonClass="p-button-secondary"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+            />
+          </div>
+        </div>
+
+        <div class="row space-between mb-15">
+          <div>
+            <span>ჯამური ღირებულება : </span>
+          </div>
+          <div class="row">
+            <div class="row price mr-5" *ngIf="detail.salesPrice">
+              <p style="color: red">{{ detail.salesPrice }}</p>
+              <span style="color: red">₾</span>
+            </div>
+            <div class="row price" [class.line-through]="detail.salesPrice">
+              <p>{{ detail.price }}</p>
+              <span>₾</span>
+            </div>
+          </div>
+        </div>
+        <div class="row space-between">
+          <span>ბრენდი : </span>
+          <span>{{ detail.productName }}</span>
+        </div>
+        <div class="row space-between">
+          <span>სახეობა : </span>
+          <span>{{ detail.productSpecies }}</span>
+        </div>
+      </div>
+      <ng-template pTemplate="footer">
+        <div class="flex gap-3 mt-1">
+          <p-button
+          (onClick)="addToFav()"
+            label="დაამატე კალათაში"
+            severity="secondary"
+            class="w-full"
+            styleClass="w-full"
+          />
+          <p-button
+          (onClick)="addToList()"
+            label="სურვილების სიაში დამატება"
+            severity="secondary"
+            class="w-full"
+            styleClass="w-full"
+          />
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

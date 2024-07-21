@@ -1,0 +1,32 @@
+<p-scrollPanel [style]="{ width: '100%', height: '400px' }">
+  <h2 class="mb-15">{{ title }}</h2>
+  <hr />
+  <div class="scroll-content row gap-3">
+    <div
+      class="product-item gap-3"
+      *ngFor="let prod of data"
+      (click)="onDetails(prod)"
+    >
+      <div class="sale-badge" *ngIf="prod.salesPrice">
+        <p>SALE</p>
+      </div>
+      <div>
+        <img class="img" [src]="prod.path" alt="{{ prod.productName }}" />
+      </div>
+      <div class="column">
+        <h4>{{ prod.productName | uppercase }}</h4>
+        <p>{{ prod.productSpecies }}</p>
+        <div class="row mb-15">
+          <div class="row price mr-5" *ngIf="prod.salesPrice">
+            <p style="color: red">{{ prod.salesPrice }}</p>
+            <span style="color: red">₾</span>
+          </div>
+          <div class="row price" [class.line-through]="prod.salesPrice">
+            <p>{{ prod.price }}</p>
+            <span>₾</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</p-scrollPanel>

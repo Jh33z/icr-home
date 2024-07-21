@@ -1,0 +1,63 @@
+<div class="wrapper">
+  <header class="fixed-header">
+    <div class="header row">
+      <div class="logo" routerLink="/">ICR HOME</div>
+      <div class="search">
+        <input type="text" pInputText placeholder="ძიება" />
+      </div>
+      <div class="icons row">
+        <span class="phone-number">03222121411</span>
+        <span>
+          <div class="heart-div">
+            <img
+              width="48px"
+              height="48px"
+              src="https://icrhome.ge/assets/header-icons/heart.svg"
+              alt=""
+            />
+            <span class="count" *ngIf="countValForFav$ | async as val">{{
+              val
+            }}</span>
+          </div>
+        </span>
+        <span>
+          <div class="heart-div">
+            <img
+              width="48px"
+              height="48px"
+              src="https://icrhome.ge/assets/header-icons/cart.svg"
+              alt=""
+            />
+
+            <span class="count" *ngIf="countValForFavList$ | async as val">{{
+              val
+            }}</span>
+          </div>
+        </span>
+        <span
+          ><img
+            width="36px"
+            height="36px"
+            style="border-radius: 50%"
+            src="https://icrhome.ge/assets/images/icons/eng.svg"
+            alt=""
+        /></span>
+      </div>
+      <div class="auth">
+        <button class="user">ავტორიზაცია</button>
+        <i class="user-icon pi pi-user" style="font-size: 1.5rem"></i>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="row gap-3">
+        <li
+          *ngFor="let nav of navigation"
+          [ngClass]="{ 'special-offer': nav.special == true }"
+        >
+          <a class="nav-el" (click)="navClick(nav.id)">{{ nav.text }}</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>

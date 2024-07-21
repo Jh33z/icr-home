@@ -1,0 +1,38 @@
+.wrapper {
+  width: 100%;
+  border-top: 1px solid;
+}
+.img {
+  border-radius: 50%;
+}
+.footer-header {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(235, 235, 235);
+}
+.content {
+  gap: 12%;
+}
+.input {
+  padding: 10px 50px;
+  border-radius: 12px;
+  width: 100%;
+}
+.footer-data {
+  width: 100%;
+  justify-content: space-around;
+}
+.payment img {
+  width: 50px;
+  height: 50px;
+}
+.payment-div {
+  width: 100%;
+  justify-content: space-around;
+  padding: 50px;
+}
+@media (max-width: 768px) {
+  .p-text {
+    display: none;
+  }
+}

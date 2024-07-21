@@ -1,0 +1,136 @@
+.wrapper {
+  margin-top: 120px;
+  width: 100%;
+  overflow-x: hidden;
+}
+.row {
+  overflow-x: hidden;
+}
+:host::ng-deep .p-inputtext {
+  color: black;
+  font-weight: 700;
+}
+
+.dropdown-div {
+  flex: 0 0 250px;
+}
+.content-div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 250px);
+}
+.cat-btn {
+  display: flex;
+  justify-content: center;
+}
+.hidden-btn {
+  display: none;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.carousel,
+.product-div {
+  width: 99%;
+}
+
+.row.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row.mb-15 {
+  margin-bottom: 15px;
+}
+
+.row.price {
+  display: flex;
+  align-items: center;
+}
+
+.row.price.mr-5 {
+  margin-right: 5px;
+}
+
+.row.price.line-through p {
+  text-decoration: line-through;
+}
+
+.ui-scrollpanel-wrapper ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.ui-scrollpanel-wrapper ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ui-scrollpanel-wrapper ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+.ui-scrollpanel-wrapper ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+:host::ng-deep .p-scrollpanel:hover .p-scrollpanel-bar,
+.p-scrollpanel:active .p-scrollpanel-bar {
+  background: grey;
+}
+.ui-scrollpanel-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.scroll-content {
+  width: max-content;
+}
+
+.sale-badge {
+  position: absolute;
+  color: white;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: rgb(244, 54, 111);
+}
+.product-item {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.product-item :hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.025);
+}
+
+@media (max-width: 900px) {
+  .dropdown-div {
+    display: none;
+    position: absolute;
+    top: 50px; /* Adjust as necessary */
+    left: 0;
+    margin: auto;
+    z-index: 1000;
+  }
+
+  .dropdown-div.show-dropdown {
+    display: block;
+  }
+  .card {
+    width: 150px;
+  }
+  .hidden-btn {
+    display: block;
+  }
+  .visible-btn {
+    display: none !important;
+  }
+}

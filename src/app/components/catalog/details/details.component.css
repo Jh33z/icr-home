@@ -1,0 +1,28 @@
+.details-div {
+  margin-top: 100px;
+}
+.img-div {
+  width: 50%;
+}
+div span {
+  font-weight: bold;
+}
+.line-through p,
+.line-through span {
+  text-decoration: line-through;
+  opacity: 0.7;
+  font-size: 14px;
+}
+:host::ng-deep.p-inputtext.p-component.p-element.p-inputnumber-input.p-filled {
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .img-div {
+    margin-top: 28%;
+    width: 100%;
+  }
+}
